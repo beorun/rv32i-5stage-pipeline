@@ -1,0 +1,21 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:57
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sim_1/new/rv32i.v,1778385845,verilog,,,,tb_riscv,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/alu.v,1778321722,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/alu_control.v,,alu,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/alu_control.v,1778331630,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/control_unit.v,,alu_control,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/control_unit.v,1778322063,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/data_mem.v,,control_unit,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/data_mem.v,1778302991,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/ex_mem_reg.v,,data_mem,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/ex_mem_reg.v,1778403554,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/forwarding_unit.v,,ex_mem_reg,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/forwarding_unit.v,1778322595,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/hazard_unit.v,,forwarding_unit,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/hazard_unit.v,1778322350,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/id_ex_reg.v,,hazard_unit,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/id_ex_reg.v,1778378072,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/if_id_reg.v,,id_ex_reg,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/if_id_reg.v,1778322654,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/imm_gen.v,,if_id_reg,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/imm_gen.v,1778319678,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/instruction_mem.v,,imm_gen,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/instruction_mem.v,1778329560,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/mem_wb_reg.v,,instr_mem,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/mem_wb_reg.v,1778403554,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/pc.v,,mem_wb_reg,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/pc.v,1778299732,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/reg_file.v,,pc,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/reg_file.v,1778304053,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/riscv_top.v,,reg_file,,,,,,,,
+D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/riscv_top.v,1778405112,verilog,,D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sim_1/new/rv32i.v,,riscv_top,,,,,,,,

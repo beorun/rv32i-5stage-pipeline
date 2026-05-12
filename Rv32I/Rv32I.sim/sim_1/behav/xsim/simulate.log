@@ -1,0 +1,23 @@
+Time resolution is 1 ps
+
+=== TEST 1: R-type ===
+PASS [         ADDI x1] x1 = 0x0000000a
+PASS [         ADDI x2] x2 = 0x00000014
+PASS [         ADD  x3] x3 = 0x0000001e
+PASS [         SUB  x4] x4 = 0x0000000a
+PASS [         AND  x5] x5 = 0x0000000a
+PASS [         OR   x6] x6 = 0x0000001e
+PASS [         XOR  x7] x7 = 0x0000001e
+PASS [         SLT  x8] x8 = 0x00000001
+
+=== TEST 2: Load/Store ===
+PASS [           LW x3] x3 = 0x000000ab
+
+=== TEST 3: Forwarding ===
+PASS [       ADDI x1=5] x1 = 0x00000005
+PASS [DI x2=8 (fwd x1)] x2 = 0x00000008
+PASS [3=13 (fwd x1+x2)] x3 = 0x0000000d
+
+=== TEST 4: Load-use stall ===
+PASS [     LW  x3=0x55] x3 = 0x00000055
+PASS [55, after stall)] x4 = 0x000000aa

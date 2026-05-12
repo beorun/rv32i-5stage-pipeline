@@ -1,0 +1,224 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun May 10 10:44:57 2026
+# Process ID         : 12768
+# Current directory  : D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent11440 D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.xpr
+# Log file           : D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/vivado.log
+# Journal file       : D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I\vivado.jou
+# Running On         : Admin-PC
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+# CPU Frequency      : 1190 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16951 MB
+# Swap memory        : 8053 MB
+# Total Virtual      : 25004 MB
+# Available Virtual  : 12098 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at D:/vivado/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/vivado/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/vivado/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/vivado/Vivado/2024.2/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 1260.582 ; gain = 130.695
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7vx485tffg1157-1
+Top: riscv_top
+INFO: [Device 21-403] Loading part xc7vx485tffg1157-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 15520
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2211.074 ; gain = 462.699
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'riscv_top' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/riscv_top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'pc' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/pc.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'pc' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/pc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'instr_mem' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/instruction_mem.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'instr_mem' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/instruction_mem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'if_id_reg' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/if_id_reg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'if_id_reg' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/if_id_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/control_unit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/control_unit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'reg_file' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/reg_file.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'reg_file' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/reg_file.v:23]
+INFO: [Synth 8-6157] synthesizing module 'imm_gen' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/imm_gen.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'imm_gen' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/imm_gen.v:23]
+INFO: [Synth 8-6157] synthesizing module 'id_ex_reg' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/id_ex_reg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'id_ex_reg' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/id_ex_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'alu_control' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/alu_control.v:23]
+INFO: [Synth 8-226] default block is never used [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/alu_control.v:31]
+INFO: [Synth 8-226] default block is never used [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/alu_control.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'alu_control' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/alu_control.v:23]
+INFO: [Synth 8-6157] synthesizing module 'alu' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/alu.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/alu.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ex_mem_reg' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/ex_mem_reg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ex_mem_reg' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/ex_mem_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/data_mem.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/data_mem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mem_wb_reg' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/mem_wb_reg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mem_wb_reg' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/mem_wb_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'hazard_unit' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/hazard_unit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hazard_unit' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/hazard_unit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'forwarding_unit' [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/forwarding_unit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'forwarding_unit' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/forwarding_unit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'riscv_top' (0#1) [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/riscv_top.v:23]
+WARNING: [Synth 8-3848] Net mem in module/entity instr_mem does not have driver. [D:/LAB_UIT/Verilog_project/RV32I/code_vivado/Rv32I/Rv32I.srcs/sources_1/new/instruction_mem.v:28]
+WARNING: [Synth 8-7129] Port addr[31] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[30] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[29] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[28] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[27] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[26] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[25] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[24] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[23] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[22] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[21] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[20] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[19] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[18] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[17] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[16] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[15] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[14] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[13] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[12] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[11] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[10] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[1] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[0] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[6] in module alu_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[4] in module alu_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[3] in module alu_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[2] in module alu_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[1] in module alu_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port funct7[0] in module alu_control is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[31] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[30] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[29] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[28] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[27] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[26] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[25] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[24] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[23] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[22] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[21] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[20] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[19] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[18] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[17] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[16] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[15] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[14] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[13] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[12] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[11] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[10] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[9] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[8] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[7] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[6] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[5] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[4] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[3] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[2] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[1] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[0] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[31] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[30] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[29] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[28] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[27] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[26] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[25] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[24] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[23] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[22] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[21] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[20] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[19] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[18] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[17] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[16] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[15] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[14] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[13] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[12] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[11] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[10] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[9] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[8] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[7] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[6] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[5] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[4] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[3] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[2] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[1] in module instr_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[0] in module instr_mem is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2320.125 ; gain = 571.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2320.125 ; gain = 571.750
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2320.125 ; gain = 571.750
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2320.125 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2432.055 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:33 ; elapsed = 00:00:22 . Memory (MB): peak = 2760.543 ; gain = 1012.168
+38 Infos, 95 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:29 . Memory (MB): peak = 2760.543 ; gain = 1476.039
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\instruction_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\pc.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\if_id_reg.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sim_1\new\rv32i.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\instruction_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\instruction_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\instruction_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\pc.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\if_id_reg.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sim_1\new\rv32i.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sim_1\new\rv32i.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sim_1\new\rv32i.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\instruction_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\pc.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\if_id_reg.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sim_1\new\rv32i.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\pc.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [D:\LAB_UIT\Verilog_project\RV32I\code_vivado\Rv32I\Rv32I.srcs\sources_1\new\pc.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun May 10 14:46:28 2026...
