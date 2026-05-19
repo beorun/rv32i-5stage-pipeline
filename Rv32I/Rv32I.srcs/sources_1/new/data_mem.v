@@ -24,15 +24,20 @@ module data_mem #(parameter MEM_DEPTH = 256)(
     input wire clk,
     input wire mem_read,    //1 read enable
     input wire mem_write,   //1 write enable
+    input wire [3:0] wmask,
     input wire [31:0] addr,
     input wire [31:0] write_data,
     output wire [31:0] read_data
     );
     reg [31:0] mem [0:MEM_DEPTH - 1];
-    
+    wire [29:0] word_addr = addr[31:2];
     always @(posedge clk) begin
-        if(mem_write)
-            mem[addr[31:2]] <= write_data;
+        if(mem_write) begin
+            if (wmask[0]) mem[word_addr][7:0]   <= write_data[7:0];
+            if (wmask[1]) mem[word_addr][15:8]  <= write_data[15:8];
+            if (wmask[2]) mem[word_addr][23:16] <= write_data[23:16];
+            if (wmask[3]) mem[word_addr][31:24] <= write_data[31:24];
+        end
     end
     
     assign read_data = (mem_read) ? mem[addr[31:2]] : 32'd0;

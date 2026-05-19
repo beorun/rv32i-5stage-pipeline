@@ -108,7 +108,7 @@ module tb_riscv;
 
         $display("\n=== TEST 2: Load/Store ===");
         check_reg(3, 32'hAB, "LW x3");
-
+        // $readmemh("tên_file.txt", tên_mảng_bộ_nhớ, [địa_chỉ_bắt_đầu], [địa_chỉ_kết_thúc]);
         // --- Test 3: Data hazard forwarding ---
         // Tests EX-EX and MEM-EX forwarding chains
         // addi x1, x0, 5

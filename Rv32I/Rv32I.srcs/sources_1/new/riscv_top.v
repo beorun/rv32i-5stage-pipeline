@@ -273,10 +273,21 @@ module riscv_top(
     // Branch/jump taken logic
     // BEQ: funct3=000, taken if zero=1
     // BNE: funct3=001, taken if zero=0
+   
+    //only for BEQ and BNE
+//    assign branch_condition = (funct3_ex == 3'b000) ?  alu_zero_ex :   // BEQ
+//                              (funct3_ex == 3'b001) ? ~alu_zero_ex :   // BNE
+//                              1'b0;
+    
+    //Full B-type :
     wire branch_condition;
-    assign branch_condition = (funct3_ex == 3'b000) ?  alu_zero_ex :   // BEQ
-                              (funct3_ex == 3'b001) ? ~alu_zero_ex :   // BNE
-                              1'b0;
+    assign branch_condition = (funct3_ex == 3'b000) ?  (fwd_a == fwd_b) :   // BEQ
+                              (funct3_ex == 3'b001) ? (fwd_a != fwd_b) :   // BNE
+                              (funct3_ex == 3'b100) ? ($signed(fwd_a) < $signed(fwd_b)) :        // BLT  (Signed)
+                              (funct3_ex == 3'b101) ? ($signed(fwd_a) >= $signed(fwd_b)) :       // BGE  (Signed)
+                              (funct3_ex == 3'b110) ? (fwd_a < fwd_b) :                          // BLTU (Unsigned)
+                              (funct3_ex == 3'b111) ? (fwd_a >= fwd_b) :                         // BGEU (Unsigned)
+                               1'b0; // Default case
 
     assign branch_taken = (branch_ex && branch_condition) || jump_ex;
 
@@ -317,10 +328,55 @@ module riscv_top(
     // MEM Stage
     // =========================================================================
 
+    // Tín hiệu kết nối mới tới Data Memory
+    reg [31:0] ram_wdata;
+    reg [3:0]  ram_wmask;
+    
+    // Lấy 2 bit thấp của địa chỉ để xác định vị trí byte (0, 1, 2, 3)
+    wire [1:0] byte_addr = alu_result_mem[1:0];
+
+    always @(*) begin
+        // Mặc định ban đầu
+        ram_wdata = write_data_mem;
+        ram_wmask = 4'b0000;
+
+        if (mem_write_mem) begin
+            case (funct3_mem)
+                3'b000: begin // SB - Store Byte (8-bit)
+                    case (byte_addr)
+                        2'b00: begin ram_wdata = {24'b0, write_data_mem[7:0]};        ram_wmask = 4'b0001; end
+                        2'b01: begin ram_wdata = {16'b0, write_data_mem[7:0], 8'b0};  ram_wmask = 4'b0010; end
+                        2'b10: begin ram_wdata = {8'b0,  write_data_mem[7:0], 16'b0}; ram_wmask = 4'b0100; end
+                        2'b11: begin ram_wdata = {write_data_mem[7:0], 24'b0};        ram_wmask = 4'b1000; end
+                    endcase
+                end
+                
+                3'b001: begin // SH - Store Halfword (16-bit)
+                    case (byte_addr[1]) // Thường chỉ căn chỉnh theo địa chỉ chẵn (00 hoặc 10)
+                        1'b0: begin ram_wdata = {16'b0, write_data_mem[15:0]};       ram_wmask = 4'b0011; end
+                        1'b1: begin ram_wdata = {write_data_mem[15:0], 16'b0};       ram_wmask = 4'b1100; end
+                    endcase
+                end
+                
+                3'b010: begin // SW - Store Word (32-bit)
+                    ram_wdata = write_data_mem;
+                    ram_wmask = 4'b1111; // Ghi đè cả 4 byte
+                end
+                
+                default: begin
+                    ram_wdata = write_data_mem;
+                    ram_wmask = 4'b0000;
+                end
+            endcase
+        end
+    end
+    
+    
     data_mem u_dmem (
         .clk        (clk),
         .mem_read   (mem_read_mem),
         .mem_write  (mem_write_mem),
+        .wmask      (ram_wmask),
         .addr       (alu_result_mem),
         .write_data (write_data_mem),
         .read_data  (mem_read_data)
@@ -348,17 +404,39 @@ module riscv_top(
         .funct3_out     (funct3_wb)
     );
     // =========================================================================
-    // WB Stage - Bộ lọc dữ liệu Load (Data Extractor)
+    // WB Stage - Data Extractor & Extender
     // =========================================================================
+    reg [7:0]  extracted_byte;
+    reg [15:0] extracted_half;
     reg [31:0] mem_data_formatted;
 
+    wire [1:0] byte_offset = alu_result_wb[1:0]; // 2 bit cuối của địa chỉ
+
+    //Trích xuất dữ liệu từ cục 32-bit của RAM
+    always @(*) begin
+        case (byte_offset)
+            2'b00: extracted_byte = mem_data_wb[7:0];
+            2'b01: extracted_byte = mem_data_wb[15:8];
+            2'b10: extracted_byte = mem_data_wb[23:16];
+            2'b11: extracted_byte = mem_data_wb[31:24];
+        endcase
+    end
+
+    always @(*) begin
+        case (byte_offset[1])
+            1'b0: extracted_half = mem_data_wb[15:0];
+            1'b1: extracted_half = mem_data_wb[31:16];
+        endcase
+    end
+
+    //Mở rộng dấu (Sign-Extend hoặc Zero-Extend)
     always @(*) begin
         case (funct3_wb)
-            3'b000: mem_data_formatted = {{24{mem_data_wb[7]}}, mem_data_wb[7:0]};   // LB  (Sign-extend 8 bit)
-            3'b001: mem_data_formatted = {{16{mem_data_wb[15]}}, mem_data_wb[15:0]}; // LH  (Sign-extend 16 bit)
-            3'b010: mem_data_formatted = mem_data_wb;                                // LW  (Giữ nguyên 32 bit)
-            3'b100: mem_data_formatted = {24'b0, mem_data_wb[7:0]};                  // LBU (Zero-extend 8 bit)
-            3'b101: mem_data_formatted = {16'b0, mem_data_wb[15:0]};                 // LHU (Zero-extend 16 bit)
+            3'b000: mem_data_formatted = {{24{extracted_byte[7]}}, extracted_byte};   // LB  (Kéo dài bit dấu)
+            3'b001: mem_data_formatted = {{16{extracted_half[15]}}, extracted_half};  // LH  (Kéo dài bit dấu)
+            3'b010: mem_data_formatted = mem_data_wb;                                 // LW  (Bê nguyên cục 32-bit)
+            3'b100: mem_data_formatted = {24'b0, extracted_byte};                     // LBU (Chèn thêm số 0)
+            3'b101: mem_data_formatted = {16'b0, extracted_half};                     // LHU (Chèn thêm số 0)
             default: mem_data_formatted = mem_data_wb;
         endcase
     end
