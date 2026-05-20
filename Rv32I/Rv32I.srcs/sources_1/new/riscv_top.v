@@ -375,7 +375,7 @@ module riscv_top(
     data_mem u_dmem (
         .clk        (clk),
         .mem_read   (mem_read_mem),
-        .mem_write  (mem_write_mem),
+        .mem_write  (ram_wdata),
         .wmask      (ram_wmask),
         .addr       (alu_result_mem),
         .write_data (write_data_mem),
